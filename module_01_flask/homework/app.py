@@ -16,7 +16,6 @@ def cars():
     return cars
 
 
-
 @app.route('/cats')
 def cats():
     cat = choice(['Корниш рекс', 'Русская голубая', 'Шотландская вислоухая', 'Мэйн-Кун', 'Манчкин'])
@@ -51,8 +50,7 @@ def counter():
     count += 1
     return 'страница запускалась ' + str(count) + ' раз'
 
+
 count = 0
 if __name__ == "__main__":
     app.run()
-
-
