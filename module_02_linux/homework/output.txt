@@ -1,0 +1,8 @@
+hw_2_1_max_number.py
+hw_2_2_ps_aux_rss.py
+hw_2_3_mean_size_ls.py
+hw_2_4_hello_world_with_day.py
+hw_3_1.py
+hw_3_2.py
+hw_3_3.py
+output.txt

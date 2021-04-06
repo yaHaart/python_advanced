@@ -6,8 +6,14 @@ import os
 
 
 def get_mean_size(ls_output_path: str) -> float:
-    """Put your code here"""
+    file_list = list()
+    with open(ls_output_path, 'r') as output_file:
+        temp_file_list = output_file.read().splitlines()
+        for file in temp_file_list:
+            temp_path = os.path.join('', file)
+            file_list.append(os.path.getsize(temp_path))
+    return sum(file_list) / len(file_list)
 
 
 if __name__ == "__main__":
-    print(get_mean_size("<place ls output file path here>"))
+    print(get_mean_size('output.txt'))
