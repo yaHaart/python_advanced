@@ -29,4 +29,15 @@
 
 
 def decrypt(s: str) -> str:
-    """Put your code here"""
+    while s.find('..') != -1:
+        print(s)
+        index = s.find('..')
+        s = s[:index - 1] + s[index + 2:]
+    while s.find('.') != -1:
+        index = s.find('.')
+        s = s[:index] + s[index + 1:]
+    return s
+
+
+encrypted_str = 'аб.рау.-када..бра'
+print(decrypt(encrypted_str))
