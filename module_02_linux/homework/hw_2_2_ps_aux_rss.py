@@ -12,7 +12,6 @@ $ ps aux >> output_file.txt
 
 Для перевода можете воспользоваться функцией _sizeof_fmt
 """
-import os
 
 
 def _sizeof_fmt(num, suffix="B"):
@@ -24,8 +23,15 @@ def _sizeof_fmt(num, suffix="B"):
 
 
 def get_summary_rss(ps_output_file_path: str) -> str:
-    """put your code here"""
+    summ = 0
+    with open(ps_output_file_path, 'r') as ps_file:
+        for line in ps_file:
+            temp_list = line.split()
+            if temp_list[5].isdigit():
+                summ += int(temp_list[5])
+        summ_str = _sizeof_fmt(summ)
+    return summ_str
 
 
 if __name__ == "__main__":
-    print(get_summary_rss("<place ps aux output file path here>"))
+    print(get_summary_rss("output_file.txt"))
