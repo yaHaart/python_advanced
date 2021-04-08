@@ -17,3 +17,6 @@ def get_mean_size(ls_output_path: str) -> float:
 
 if __name__ == "__main__":
     print(get_mean_size('output.txt'))
+
+# Зачёт!
+

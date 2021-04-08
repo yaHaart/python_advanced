@@ -41,3 +41,5 @@ def decrypt(s: str) -> str:
 
 encrypted_str = 'аб.рау.-када..бра'
 print(decrypt(encrypted_str))
+
+# Зачёт!

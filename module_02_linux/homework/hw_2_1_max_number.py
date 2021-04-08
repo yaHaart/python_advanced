@@ -12,6 +12,9 @@ app = Flask(__name__)
 
 
 @app.route("/max_number/<num1>/<num2>/<num3>/")
+# TODO Лучше получить список чисел в одну переменную:
+#  "/max_number/<path:numbers>/")
+#  Тогда в переменной numbers будет строка, содержащая числа разделенные слэшами.
 def max_number(num1, num2, num3):
 
     return f'Максимальное переданное число <i>{max(num1, num2, num3)}</i>'
