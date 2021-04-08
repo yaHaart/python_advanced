@@ -15,11 +15,7 @@ $ ps aux >> output_file.txt
 
 
 def _sizeof_fmt(num, suffix="B"):
-    # TODO В колонке RSS результат возвращается в килобайтах.
-    #  В текущей реализации результат будет в 1024 раза меньше
-    #  чем должен быть. Для исправления проще всего убрать первый
-    #  элемент списка в следующей строке.
-    for unit in ["", "Ki", "Mi", "Gi", "Ti", "Pi", "Ei", "Zi"]:
+    for unit in [ "Ki", "Mi", "Gi", "Ti", "Pi", "Ei", "Zi"]:
         if abs(num) < 1024.0:
             return "%3.1f%s%s" % (num, unit, suffix)
         num /= 1024.0
