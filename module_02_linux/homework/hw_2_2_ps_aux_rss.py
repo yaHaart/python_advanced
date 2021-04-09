@@ -15,7 +15,7 @@ $ ps aux >> output_file.txt
 
 
 def _sizeof_fmt(num, suffix="B"):
-    for unit in [ "Ki", "Mi", "Gi", "Ti", "Pi", "Ei", "Zi"]:
+    for unit in ["Ki", "Mi", "Gi", "Ti", "Pi", "Ei", "Zi"]:
         if abs(num) < 1024.0:
             return "%3.1f%s%s" % (num, unit, suffix)
         num /= 1024.0
@@ -35,3 +35,5 @@ def get_summary_rss(ps_output_file_path: str) -> str:
 
 if __name__ == "__main__":
     print(get_summary_rss("output_file.txt"))
+
+# Зачёт!
