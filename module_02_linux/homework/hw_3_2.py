@@ -22,6 +22,14 @@ storage = {}
 
 @app.route("/add/<date>/<int:number>")
 def add(date: str, number: int):
+    if len(date) != 8:
+        raise BaseException('Неправильный формат даты')
+    elif 1980 <= int(date[:4]) <= 2020:
+        raise BaseException('Год не в промежутке 1980-2020')
+    elif 1 <= int(date[5:6]) <=12:
+        raise BaseException('Месяцев только 12')
+
+
     if date in storage:
         storage[date] += number
     else:
